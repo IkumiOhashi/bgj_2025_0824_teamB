@@ -9,7 +9,7 @@ public class Facility
     {
         get
         {
-            return data.basePrice * (count + 1);
+            return data.basePrice * System.Math.Pow(data.priceIncrease, count);
         }
     }
 

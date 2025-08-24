@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MoneyIdleManager : MonoBehaviour
@@ -5,12 +6,37 @@ public class MoneyIdleManager : MonoBehaviour
     [SerializeField] double moneyPerSecond = 1;
     [SerializeField] MoneyRepository repository;
 
-    [SerializeField] DollarPerSecondDisplay dispValue;
+    [SerializeField] DollarPerSecondDisplay dispValue;  // ïbä‘ÇÃëùâ¡ó 
+
+    [SerializeField] FacilityManager facilityManager;   // é{ê›åQ
+
+    private void Awake()
+    {
+        ChangeMoneyPerSecond();
+    }
 
     private void Update()
     {
         repository.AddMoney(moneyPerSecond * Time.deltaTime);
 
+    }
+
+    // ïbä‘ÇÃê∂éYó ÇÃïœçX
+    public void ChangeMoneyPerSecond()
+    {
+        //Å@FacilityName name;
+        moneyPerSecond = 0;
+
+        for (int i = 0; i < facilityManager.facilities.Count; i++)
+        {
+            double production = facilityManager.facilities[i].Production;
+            // double buff = ~~~;
+
+            // moneyPerSecond = production * buff;
+            moneyPerSecond += production;
+        }
+
+        // ïbä‘ê∂éYó ÇÃï\é¶ó ÇïœçX
         dispValue.SetDollarPerSecond(moneyPerSecond);
     }
 }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SampleFacilityData
   m_EditorClassIdentifier: 
   FacilityName: 0
-  baseProduction: 5
+  baseProduction: 0.1
   basePrice: 5
   priceIncrease: 5

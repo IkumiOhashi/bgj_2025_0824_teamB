@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      job_naisyoku_man_0: 486226944139991359
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

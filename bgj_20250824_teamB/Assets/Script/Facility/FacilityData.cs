@@ -2,11 +2,16 @@ using UnityEngine;
 
 public enum FacilityName
 {
-    Cursor,
-    Grandma,
-    Farm,
-    Factory,
-    Mine
+    OnlineShop,             // 個人ネットショップ
+    ConvenienceStore,       // コンビニ
+    ShoppingMall,           // ショッピングモール
+    Bank,                   // 銀行
+    GlobalCorporation,      // 多国籍企業
+    Nation,                 // 国家
+    PlanetEarth,            // 地球
+    ParallelWorld,          // 並行世界
+    GalacticFederation,     // 銀河連合
+    TimeBank,               // 時空銀行
 }
 
 [CreateAssetMenu(fileName = "FacilityData", menuName = "Clicker/FacilityData")]

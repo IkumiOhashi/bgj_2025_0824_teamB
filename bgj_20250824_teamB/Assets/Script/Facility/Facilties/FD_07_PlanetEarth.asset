@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b33b9f8210abbe47bf7166fe5283bd7, type: 3}
-  m_Name: SampleFacilityData
+  m_Name: FD_07_PlanetEarth
   m_EditorClassIdentifier: 
-  FacilityName: 0
-  baseProduction: 0.1
-  basePrice: 5
-  priceIncrease: 5
+  FacilityName: 6
+  baseProduction: 44000
+  basePrice: 330000000
+  priceIncrease: 1.15

@@ -18,7 +18,6 @@ public class MoneyIdleManager : MonoBehaviour
     private void Update()
     {
         repository.AddMoney(moneyPerSecond * Time.deltaTime);
-
     }
 
     // •bŠÔ‚Ì¶Y—Ê‚Ì•ÏX

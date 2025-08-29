@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class FacilityManager : MonoBehaviour
 {
     // お金管理クラス
-    public MoneyRepository moneyRepository;
+    [SerializeField] private MoneyRepository moneyRepository;
+    [SerializeField] private MoneyIdleManager moneyIdleManager;
 
     // 施設のリスト
     public List<Facility> facilities = new List<Facility>();
@@ -13,20 +14,32 @@ public class FacilityManager : MonoBehaviour
     // 施設購入処理
     public bool BuyFacility(int index)
     {
+        //Debug.Log("▽ 購入開始");
         // 範囲外なら買えない
         if (index < 0 || index >= facilities.Count) return false;
 
         Facility facility = facilities[index];
         double price = facility.CurrentPrice;
 
+        //Debug.Log("アイテムの値段" + price); 
+
         // お金足りてたら購入
         if (moneyRepository.UseMoney(price))
         {
+            //Debug.Log("〇 購入完了");
             facility.count++; // 所持数アップ
+            moneyIdleManager.ChangeMoneyPerSecond();
             return true;
         }
 
+        Debug.Log("× 購入失敗");
         // 買えなかった
         return false;
+    }
+
+    // ベース価格を取得
+    public double GetBasePrice(int _index)
+    {
+        return facilities[_index].data.basePrice;
     }
 }

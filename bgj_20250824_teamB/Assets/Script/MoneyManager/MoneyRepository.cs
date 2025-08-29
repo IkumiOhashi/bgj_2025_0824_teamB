@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class MoneyRepository : MonoBehaviour
 {
-    public double totalAssets; // ‘‘Y
+    public double totalAssets;      // ‘‘Y
+    public double maxHeldMoney;    // ‰ß‹‚ÌÅ‚‘‘YŠz
 
     // ‚¨‹à‚ğ‰ÁZ
     public void AddMoney(double _money)
@@ -13,6 +14,7 @@ public class MoneyRepository : MonoBehaviour
     // ‚¨‹à‚Ìg—p@‰Â”\‚È‚çtrue •s‰Â”\‚È‚çfalse‚ğ•Ô‚·
     public bool UseMoney(double _money)
     {
+        //Debug.Log("Š‹à : " + totalAssets);
         if(totalAssets < _money)
         {
             return false;
@@ -25,8 +27,13 @@ public class MoneyRepository : MonoBehaviour
     }
 
     // Œ»İ‚Ì‘‘Y‚ğæ“¾
-    public double GetTotalAssets()
+    public double GetTotalAssets() { return totalAssets; }
+
+    // ‰ß‹Å‚‚Ì‘‘Y‚ğæ“¾
+    public double GetMaxHeldMoney() { return maxHeldMoney; }
+
+    private void Update()
     {
-        return totalAssets;
+        if(totalAssets > maxHeldMoney) maxHeldMoney = totalAssets;
     }
 }
